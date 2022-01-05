@@ -1,0 +1,31 @@
+int longestMountain(vector<int>& arr) {
+        int n=arr.size();
+        if(n<3) return 0;
+        
+        int res=0,count;
+        int i,j;
+        for(int i=1;i<n;i++){
+            count=1;
+            
+            j=i;
+            
+            while(j<n && arr[j-1]<arr[j]){
+                j++;
+                count++;
+            }
+            bool flag=false;
+            
+            while(i!=j && j<n && arr[j-1]>arr[j]){
+                flag=true;
+                count++;
+                j++;
+            }
+            
+            if(i!=j && flag && count>2){
+                res=max(res,count);
+                j--;
+            }
+            i=j;
+        }
+        return res;
+    }
