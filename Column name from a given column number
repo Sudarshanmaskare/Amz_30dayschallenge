@@ -1,0 +1,13 @@
+string colName (long long int n)
+    {
+        // your code here
+        string s="";
+        while(n){
+            n--;
+            int temp=n%26;
+            string res=string(1,'A'+temp);
+            s=res+s;
+            n/=26;
+        }
+        return s;
+    }
