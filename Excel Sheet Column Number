@@ -1,0 +1,11 @@
+class Solution {
+public:
+    int titleToNumber(string str) {
+        int n=str.size();
+        int res=0;
+        for(auto var:str){
+            res=res*26+(var-'A'+1);
+        }
+        return res;
+    }
+};
